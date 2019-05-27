@@ -1,0 +1,36 @@
+{
+    "architecture":
+    {
+        "layers": [ 
+            ["conv", [7, 1], 128, "leaky_relu"],
+            ["max_pool", [3, 1], [3, 1]],
+            ["conv", [7, 1], 128, "leaky_relu"],
+            ["max_pool", [3, 1], [3, 1]],
+            ["conv", [3, 1], 128, "leaky_relu"],
+            ["max_pool", [3, 1], [3, 1]],
+            ["flatten"],
+            ["dense", 512, "leaky_relu"],
+            ["dropout", 0.5],
+            ["dense", 512, "leaky_relu"],
+            ["dropout", 0.5],
+            ["dense", 10, null]
+                ],
+        "learning_algorithm": "adam"
+    },
+    "input_shape": [null, 784, 1, 1],
+    "learning_rate": 0.001,
+
+    "string_kernel_mul": 1,
+    
+    "validate_step": 100,
+    "save_step": 3000,
+    "steps" : 100000,
+
+    "save_dir": "@results/models/mnist_classifier_1",
+    "save_model_name": "mnist_classifier",
+    "tensorboard_path": "tensorboard_train",
+    "tensorboard_val_path": "tensorboard_validate",
+    "tensorboard_test_path": "tensorboard_test",
+    
+    "dataset_generator_config_path": "@src/config/classifier_dataset_generator_config.json"
+}

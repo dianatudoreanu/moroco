@@ -1,0 +1,36 @@
+{
+    "architecture":
+    {
+        "layers": [ 
+                    ["conv", [7, 24], 32, "relu"],
+                    ["max_pool", [2, 2], [2, 2]],
+                    ["conv", [7, 24], 64, "relu"],
+                    ["max_pool", [2, 2], [2, 2]],
+                    ["conv", [7, 24], 128, "relu"],
+                    ["max_pool", [2, 2], [2, 2]],
+                    ["conv", [7, 24], 256, "relu"],
+                    ["max_pool", [2, 2], [2, 2]],
+                    ["conv", [7, 24], 512, "relu"],
+                    ["avg_global_pool"],
+                    ["dense", 250, "relu"],
+                    ["embedding_dense", 100, "relu"]
+                ],
+        "learning_algorithm": "adam"
+    },
+    "input_shape": [null, 1500, 96, 1],
+    "learning_rate": 0.0001,
+
+    "string_kernel_mul": 1,
+    
+    "validate_step": 100,
+    "save_step": 3000,
+    "steps" : 100000,
+
+    "save_dir": "@results/models/siamese_network_1",
+    "save_model_name": "siamese_network",
+    "tensorboard_path": "tensorboard_train",
+    "tensorboard_val_path": "tensorboard_validate",
+    "tensorboard_test_path": "tensorboard_test",
+    
+    "dataset_generator_config_path": "@src/config/dataset_generator_config.json"
+}

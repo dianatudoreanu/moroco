@@ -1,0 +1,41 @@
+{
+    "architecture":
+    {
+        "layers": [ 
+                    ["reshape", [-1, 5000]],
+                    ["embedding_layer", 85, 128],
+                    ["reshape", [-1, 5000, 1, 128]],
+                    ["conv", [7, 1], 128, "leaky_relu"],
+                    ["max_pool", [3, 1], [3, 1]],
+                    ["squeeze_and_excitation", 64],
+                    ["conv", [7, 1], 128, "leaky_relu"],
+                    ["max_pool", [3, 1], [3, 1]],
+                    ["squeeze_and_excitation", 64],
+                    ["conv", [3, 1], 128, "leaky_relu"],
+                    ["max_pool", [3, 1], [3, 1]],
+                    ["squeeze_and_excitation", 64],
+                    ["flatten"],
+                    ["dense", 512, "leaky_relu"],
+                    ["dropout", 0.5],
+                    ["embedding_dense", 512, "leaky_relu"]
+                ],
+        "learning_algorithm": "adam",
+        "alpha": 0.75
+    },
+    "input_shape": [null, 5000, 1, 1],
+    "learning_rate": 0.00001,
+
+    "string_kernel_mul": 1,
+    
+    "validate_step": 100,
+    "save_step": 2500,
+    "steps" : 100000,
+
+    "save_dir": "@results/models/triplet_loss_ro_1",
+    "save_model_name": "triplet_loss",
+    "tensorboard_path": "tensorboard_train",
+    "tensorboard_val_path": "tensorboard_validate",
+    "tensorboard_test_path": "tensorboard_test",
+    
+    "dataset_generator_config_path": "@src/config/triplet_loss_dataset_generator_config.json"
+}

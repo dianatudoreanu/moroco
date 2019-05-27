@@ -1,0 +1,15 @@
+{
+    "classifier_model_path" : "@results/models/binary_classifier_ro/binary_classifier_ro-6000",
+    "triplet_model_path" : "@results/models/triplet_loss_ro_1/triplet_loss-10000",
+    "result_path" : "@results/test/subtask-3-run-1-DTeam.txt",
+    "ensemble_kernel" : "rbf",
+    "ensemble_C" : 1,
+    "emb_kernel" : "rbf",
+    "emb_C" : 1,
+    "data_type" : "multiclass",
+    "train_dataset_path": "@data/subtask3/train_dataset.txt",
+    "dev_dataset_path": "@data/subtask3/dev_dataset.txt",
+    "test_dataset_path" : "@data/test.txt"
+
+
+}

@@ -1,0 +1,26 @@
+{
+    "string_size": 5000,
+    "queue_limit": 25,
+    "string_kernel_path": "@data/K6.npy",
+    "string_kernel_cache_train_path": "@data/cache/dataset_generator_K6_train.npy",
+    "string_kernel_cache_val_path": "@data/cache/dataset_generator_K6_val.npy",
+    "string_kernel_cache_test_path": "@data/cache/dataset_generator_K6_test.npy",
+    "normalize_string_kernel": true,
+    "encoding_type": "ASCII",
+    "label_type" : "TRIPLET_LOSS",
+
+    "train_dataset_path": "@data/subtask3/train_dataset.txt",
+    "train_batch_size": 90,
+    "train_no_epochs": null,
+    "train_shuffle": true,
+    
+    "val_dataset_path": "@data/subtask3/val_dataset.txt",
+    "val_batch_size": 90,
+    "val_no_epochs": null,
+    "val_shuffle": true,
+    
+    "test_dataset_path": "@data/subtask3/test_dataset.txt",
+    "test_batch_size": 90,
+    "test_no_epochs": null,
+    "test_shuffle": true
+}

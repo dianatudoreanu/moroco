@@ -1,0 +1,11 @@
+{
+    "alphabet_size" : 85,
+    "embedding_size" : 64,
+    "input_shape": [null, 5000],
+    "string_size" : 5000,
+    "emb_matrix_path" : "@data/embedding_matrix.npy",
+    "no_epochs" : 100,
+    "batch_size" : 128,
+    "learning_rate": 0.001,
+    "dataset_path" :"@data/all_dataset.txt"
+}
